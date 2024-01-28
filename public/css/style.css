@@ -1,0 +1,464 @@
+/* style.css */
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../src/bgBody.jpg');
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+
+body::after {
+    content: "SΛMSUNG"; 
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    position: absolute; 
+    top: 92%;
+    right: 0;
+    bottom: 90px;
+    left: 0;
+    z-index: 3; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+#welcome-screen {
+    width: 100%;
+    height: 100%;
+    background: url('../src/tekken.gif') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+#start-game {
+    margin-right: 20px;
+    margin-top: 400px;
+    font-size: 1.2rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1px 30px 1px ;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: rgb(44, 16, 15);
+    color: rgb(234, 234, 234);
+    font-weight: 700;
+    transition: 0.6s;
+    box-shadow: 0px 0px 60px #b5b0b0;
+    -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.2));
+  }
+  
+#start-game:active {
+    scale: 0.7;
+}
+  
+#start-game:hover {
+    background: rgb(231, 170, 163);
+    background: linear-gradient(270deg, rgba(126, 18, 14, 0.681) 0%, rgba(134, 46, 43, 0.873) 60%);
+    color: rgb(4, 4, 38);
+}
+
+
+
+
+/* Conteneur du jeu */
+#game-container {
+    width: 80%;
+    max-width: 1000px;
+    height: 540px;
+    border: 30px solid #464545;
+    border-bottom: 70px solid rgb(22, 22, 22);
+    border-top: 70px solid rgb(22, 22, 22);
+    /* border-radius: 2rem; */
+    background-color: #cdcccc;
+    box-shadow: 0 0 20px 0 rgb(118, 153, 236);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    filter: blur(58%);
+} 
+
+
+
+
+/* Écrans du jeu */
+.screen {
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+/* Titres */
+#selection-screen h2, 
+#battle-screen h2 {
+    margin: 0 0 20px 0;
+    color: white;
+}
+
+
+/* Liste des personnages pour la sélection */
+#character-list {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+
+
+/* Styles des personnages dans l'écran de sélection */
+.character {
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    transition: 0.1s ease;
+    box-shadow: 1px 1px 1rem #ffffff;
+    border-radius: 10px;
+}
+
+
+
+.character:hover img {
+   transform: scale(1.5);
+}
+
+
+.character:focus {
+    border: 2px solid;
+}
+
+
+.character img {
+    width: 150px; 
+    height: auto;
+    transition: 1s ease;   
+}
+
+
+.character img[alt="Marshall Law"] {
+    width: 180px;
+}
+
+
+.character span {
+    display: block;
+}
+
+
+
+#attack-buttons button {
+    --glow-color: rgb(176, 252, 255);
+    --glow-spread-color: rgba(123, 251, 255, 0.781);
+    --enhanced-glow-color: rgb(206, 255, 255);
+    --btn-color: rgb(61, 127, 136);
+    border: 0.25em solid var(--glow-color);
+    padding: 0.8em 1.8em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 0.5rem 0 var(--glow-color),
+      0 0 0.5rem 0.5em var(--glow-spread-color),
+      inset 0 0 0.65em 0.25em var(--glow-color);
+    /* text-shadow: 0 0 0.3em var(--glow-color); */
+    position: relative;
+    margin-right: 15px;
+    transition: all 0.1s;
+    margin-top: 50px;
+}
+  
+
+#attack-buttons button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 0.2em 0.25em var(--glow-color),
+      0 0 3em 0.2em var(--glow-spread-color),
+      inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
+
+  
+#attack-buttons button:active {
+    box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+      0 0 1em 1em var(--glow-spread-color),
+      inset 0 0 0.5em 0.25em var(--glow-color);
+}
+  
+
+
+
+#start-fight {
+    padding: 0.5em 2em 0.5em 2.5em;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 15px;
+    color: #fff6fb;
+    letter-spacing: 0.3em;
+    text-shadow: -2px 2px 5px #FD3084;
+    background-color: transparent;
+    border: 2px solid #390824;
+    box-shadow: 0 0 0px 1px #c70e5e,
+      0 0 10px 2px #bb8ea1,
+      inset 0 0 0px 1px #7a0b3b,
+      inset 0 0 10px 2px #790e3a;
+    transition: 100ms;
+    opacity: 0.4;
+    margin-top: 50px;
+}
+
+
+  
+#start-fight:hover {
+    box-shadow: 0 0 0px 1px #f3b1ce,
+      0 0 10px 2px #d09ab1,
+      inset 0 0 0px 1px #e7bacd,
+      inset 0 0 30px 2px #701139;
+    text-shadow: 0 0 10px #FD3084;
+    transform: translateY(-5px);
+}
+
+
+  
+#start-fight:active {
+    box-shadow: 0 0 0px 1px #F11271,
+      0 0 25px 2px #FD3084,
+      inset 0 0 0px 1px #F11271,
+      inset 0 0 30px 2px #FD3084;
+    transform: translateY(1px);
+}
+
+
+
+
+/* Styles des barres de vie des personnages */
+.health-bar {
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1rem #ffffff;
+    margin: 10px 0;
+    transition: width 0.3s;
+    color: rgb(163, 161, 161);
+    font-weight: bold;
+    border: 1px solid grey;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+}
+
+
+/* Informations des personnages pendant le combat */
+#player-info, #enemy-info {
+    margin-bottom: 20px;
+}
+
+
+
+
+.character.selected {
+    outline: 2px solid #00ff00; 
+}
+
+
+#player-sprite, #enemy-sprite {
+    width: 40%;
+    position: relative;
+    display: flex;
+    transition: transform 1.5s ease;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+
+
+#enemy-sprite {
+    align-self: flex-end;
+    animation: moov 3s ease-in-out;
+    margin-right: 50px;
+}
+
+
+
+@keyframes moov {
+    0%, 100% {
+        transform: translateX(150deg);
+    }
+}
+
+
+
+#player-info {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+#player-health-bar {
+    margin-bottom: 130px;
+    margin-top: -20px;
+    background-color: #00ff00;
+}
+
+
+#enemy-info {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+#enemy-health-bar {
+    margin-bottom: 130px;
+    margin-top: -20px;
+    background-color: #00ff00;
+}
+
+
+#battle-screen {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+
+
+#battle-screen::before {
+    content: ""; 
+    position: absolute; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1; 
+    background-image: url('../src/backgroundfight.jpg'); 
+    background-repeat: no-repeat; 
+    background-position: 50% bottom; 
+    background-size: 100%; 
+    filter: brightness(20%) ; 
+    filter: blur(58%);
+}
+
+
+
+.affichage {
+    width: 100%;
+    display: flex;
+    gap: 10rem;
+}
+
+
+
+
+
+#selection-screen {
+    height: 100%;
+    position: relative;
+    
+}
+
+#selection-screen::before { 
+    content: ""; 
+    position: absolute; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1; 
+    background-image: url('../src/vsbanner.jpg'); 
+    background-repeat: no-repeat; 
+    background-position:  top; 
+    background-size: 100%; 
+    filter: brightness(170%) ; 
+}
+
+
+
+.action-message {
+    position: fixed;
+    top: 50px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(232, 229, 229, 0.8);
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0.2rem rgba(146, 146, 146, 0.5);
+    z-index: 1000; 
+    animation: fadeInOut 3s ease-in-out;
+}
+
+
+#player-sprite.attacking, #enemy-sprite.attacking {
+    animation: blink-shadow 1s ease-in-out infinite;
+}
+
+
+
+#player-sprite.attacked, #enemy-sprite.attacked {
+    animation: blink-opacity 0.2s ease-in-out infinite;
+}
+
+
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    10%, 90% { opacity: 1; } 
+}
+
+
+
+
+@keyframes blink-opacity {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+
+
+
+@keyframes slow-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes fast-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+
+.health-bar.slow-blink {
+    animation: slow-blink 2s ease-in-out infinite;
+}
+
+
+.health-bar.fast-blink {
+    animation: fast-blink 1s ease-in-out infinite;
+}
+
+
+
+.character-selected {
+    box-shadow: 1px 1px 1rem #1557c8 !important;
+}
+
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu de Combat Tekken</title>
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+
+<style type="text/css">
+* {cursor: url(https://cur.cursors-4u.net/games/gam-5/gam403.cur), auto !important;}
+</style>
+
+
+<body>
+    <a href="https://www.cursors-4u.com/cursor/2009/02/17/jin-kazama-tekken.html" target="_blank" title="Jin Kazama - Tekken">
+        <img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Jin Kazama - Tekken" style="position:absolute; top: 0px; right: 0px;" />
+    </a>
+
+    <div id="game-container">
+
+        <!-- welcome screen -->
+        <div id="welcome-screen" class="screen">
+            <button id="start-game">
+                LAUNCH
+            </button>
+        </div>
+
+        <!--selection screen-->
+        <div id="selection-screen" class="screen">
+            <h2>Choisissez votre combattant</h2>
+            <div id="character-list">
+                <!-- Personnage 1 -->
+                <div class="character" data-name="Marshall Law">
+                    <img src="./public/src/marshall.png" alt="Marshall Law">
+                    <span>Marshall Law</span>
+                </div>
+                <!-- Personnage 2 -->
+                <div class="character" data-name="Kazuya Mishima">
+                    <img src="./public/src/kazuya.png" alt="Kazuya Mishima">
+                    <span>Kazuya Mishima</span>
+                </div>
+            </div>
+            <button id="start-fight">PLAY</button>
+        </div>
+
+        <!--battle screen-->
+        <div id="battle-screen" class="screen" style="display: none;">
+
+            <div class="affichage">
+                <div id="player-info">
+                    <h2 id="player-name"></h2>
+                    <div id="player-health-bar" class="health-bar"></div>
+                    <img id="player-sprite" class="sprite" src="" alt="Player Sprite">
+                </div>
+                
+                <div id="enemy-info">
+                    <h2 id="enemy-name"></h2>
+                    <div id="enemy-health-bar" class="health-bar"></div>
+                    <img id="enemy-sprite" class="sprite" src="" alt="Enemy Sprite">
+                </div>
+                
+            </div>
+            
+            
+            <div id="attack-buttons">
+                
+            </div>
+        </div>
+    </div>
+
+        <!--modal to display a message-->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <p id="modal-text"></p>
+               
+            </div>
+        </div>
+    
+
+    <script type="module" src="./public/js/module/main.js"></script>
+</body>
+</html>
